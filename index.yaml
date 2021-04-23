@@ -3,6 +3,16 @@ entries:
   inner-source:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-04-23T13:50:34.371112934Z"
+    description: A Helm chart for Kubernetes
+    digest: 2b6d91227ccf267fd3c8fd036b95490d7304bf2b1243ac2e7576eb17bbc441f9
+    name: inner-source
+    type: application
+    urls:
+    - https://github.com/surjsingh/gitops/releases/download/inner-source-0.1.5/inner-source-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-04-23T13:38:28.331559876Z"
     description: A Helm chart for Kubernetes
     digest: 87b9c27106f0f8dda83da43024ce95e4125c017fe61ea724a08410049560f283
