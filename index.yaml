@@ -101,4 +101,15 @@ entries:
     urls:
     - https://github.com/surjsingh/gitops/releases/download/inner-source-0.1.0/inner-source-0.1.0.tgz
     version: 0.1.0
+  psi-inner-source:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-06-28T13:50:35.987956286Z"
+    description: A Helm chart for Kubernetes
+    digest: 8aa6783f95209bb0650a2eb6672e5258e2beff19badf2921a55d8897de1aa9f6
+    name: psi-inner-source
+    type: application
+    urls:
+    - https://github.com/surjsingh/gitops/releases/download/psi-inner-source-0.2.1/psi-inner-source-0.2.1.tgz
+    version: 0.2.1
 generated: "2021-04-23T12:32:40.464261159Z"
