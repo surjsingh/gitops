@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "psi-inner-source.name" -}}
+{{- define "inner-source.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "psi-inner-source.fullname" -}}
+{{- define "inner-source.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "psi-inner-source.chart" -}}
+{{- define "inner-source.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "psi-inner-source.labels" -}}
-helm.sh/chart: {{ include "psi-inner-source.chart" . }}
-{{ include "psi-inner-source.selectorLabels" . }}
+{{- define "inner-source.labels" -}}
+helm.sh/chart: {{ include "inner-source.chart" . }}
+{{ include "inner-source.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "psi-inner-source.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "psi-inner-source.name" . }}
+{{- define "inner-source.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "inner-source.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "psi-inner-source.serviceAccountName" -}}
+{{- define "inner-source.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "psi-inner-source.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "inner-source.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

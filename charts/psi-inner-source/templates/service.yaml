@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "psi-inner-source.fullname" . }}
+  name: {{ include "inner-source.fullname" . }}
   labels:
-    {{- include "psi-inner-source.labels" . | nindent 4 }}
+    {{- include "inner-source.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "psi-inner-source.selectorLabels" . | nindent 4 }}
+    {{- include "inner-source.selectorLabels" . | nindent 4 }}
