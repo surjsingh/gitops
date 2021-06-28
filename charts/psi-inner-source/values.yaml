@@ -1,11 +1,11 @@
-# Default values for inner-source.
+# Default values for psi-inner-source.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: harbor.prod.pscloudhub.com/psinnersource_platform/innersource-pwa/inner-source:master
+  repository: psregistry.pscloudhub.com/psinnersource_platform/innersource-pwa/psi-inner-source:master
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
 
@@ -46,11 +46,11 @@ ingress:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: inner-source.local
+    - host: psi-inner-source.local
       paths:
       - path: /
         backend:
-          serviceName: inner-source
+          serviceName: psi-inner-source
           servicePort: 8080
   tls: []
   #  - secretName: chart-example-tls
@@ -68,9 +68,9 @@ resources:
 autoscaling:
   enabled: false
   minReplicas: 1
-  maxReplicas: 100
+  maxReplicas: 10
   targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
 
 
 nodeSelector: {}
